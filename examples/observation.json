@@ -1,0 +1,17 @@
+{
+  "source_type_code": 0,
+  "events_per_minute": 4,
+  "error_ratio": 0.05,
+  "auth_failure_ratio": 0.02,
+  "access_denied_ratio": 0.01,
+  "distinct_event_codes": 6,
+  "distinct_principals": 3,
+  "distinct_hosts": 1,
+  "off_hours_ratio": 0.1,
+  "rare_template_ratio": 0.05,
+  "mean_severity": 3,
+  "burstiness": 0.8,
+  "mean_interarrival_seconds": 15,
+  "privileged_action_count": 0,
+  "baseline_expected_events_per_minute": 4.5
+}

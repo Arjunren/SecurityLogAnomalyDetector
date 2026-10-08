@@ -1,0 +1,9 @@
+{
+  "seed": 42,
+  "test_fraction": 0.2,
+  "validation_fraction": 0.2,
+  "n_components": 8,
+  "benign_quantile": 0.99,
+  "maximum_rows": 500000,
+  "maximum_dataset_bytes": 268435456
+}

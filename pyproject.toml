@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=75,<81", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "security-log-anomaly-detector"
+version = "1.0.0"
+description = "Unsupervised anomaly scoring for structured security log windows"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+authors = [{name = "Arjunren"}]
+dependencies = [
+  "fastapi>=0.115,<1",
+  "uvicorn>=0.34,<1",
+  "pydantic-settings>=2.14.2,<3",
+  "numpy>=2,<3",
+  "pandas>=2.2,<4",
+  "scikit-learn>=1.6,<2",
+  "prometheus-client>=0.21,<1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "httpx>=0.28,<1", "ruff>=0.11,<1", "mypy>=1.15,<2", "bandit>=1.8,<2", "pip-audit>=2.8,<3", "pre-commit>=4,<5", "pandas-stubs>=2.2,<4", "types-setuptools>=75,<81"]
+
+[project.scripts]
+security-log-anomaly-detector = "security_log_anomaly_detector.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "S"]
+ignore = ["S101"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+packages = ["security_log_anomaly_detector"]
+ignore_missing_imports = true
+plugins = ["pydantic.mypy"]
